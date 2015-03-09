@@ -1,0 +1,27 @@
+﻿html,body, .fullHeight {
+    height:100%;
+}
+
+.singleRow {
+    height:15%;
+}
+
+.quarterRow {
+    height:25%;
+}
+
+.doubleRow {
+    height:30%;
+}
+
+.halfRow {
+    height:50%;
+}
+
+button {
+    height:100%;
+}
+
+#casella {
+    text-align:right;
+}

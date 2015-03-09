@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Calcolatrice</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Calcolatrice references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid fullHeight">
+        <div class="row quarterRow">
+            <div id="casella" class="col-xs-12 h1">0.0</div>
+        </div>
+        <div class="row singleRow">
+            <button id="btn_cancella" class="col-xs-3 btn btn-default operazione">C</button>
+            <button id="btn_divisione" class="col-xs-3 btn btn-default operazione">/</button>
+            <button id="btn_moltiplicazione" class="col-xs-3 btn btn-default operazione">*</button>
+            <button id="btn_sottrazione" class="col-xs-3 btn btn-default operazione">-</button>
+        </div>
+        <div class="row doubleRow">
+            <div class="col-xs-9 fullHeight">
+                <div class="row halfRow">
+                    <button id="btn_1" class="col-xs-4 btn btn-default cifra">1</button>
+                    <button id="btn_2" class="col-xs-4 btn btn-default cifra">2</button>
+                    <button id="btn_3" class="col-xs-4 btn btn-default cifra">3</button>
+                </div>
+                <div class="row halfRow">
+                    <button id="btn_4" class="col-xs-4 btn btn-default cifra">4</button>
+                    <button id="btn_5" class="col-xs-4 btn btn-default cifra">5</button>
+                    <button id="btn_6" class="col-xs-4 btn btn-default cifra">6</button>
+                </div>
+            </div>
+            <button id="btn_somma" class="col-xs-3 btn btn-default operazione">+</button>
+        </div>
+        <div class="row doubleRow">
+            <div class="col-xs-9 fullHeight">
+                <div class="row halfRow">
+                    <button id="btn_7" class="col-xs-4 btn btn-default cifra">7</button>
+                    <button id="btn_8" class="col-xs-4 btn btn-default cifra">8</button>
+                    <button id="btn_9" class="col-xs-4 btn btn-default cifra">9</button>
+                </div>
+                <div class="row halfRow">
+                    <button id="btn_0" class="col-xs-8 btn btn-default cifra">0</button>
+                    <button id="btn_decimale" class="col-xs-4 btn btn-default cifra">.</button>
+                </div>
+            </div>
+            <button id="btn_risultato" class="col-xs-3 btn btn-default operazione">=</button>
+        </div>
+    </div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <!--<script src="scripts/bootstrap.min.js"></script>-->
+    <script src="scripts/calcolatrice.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
