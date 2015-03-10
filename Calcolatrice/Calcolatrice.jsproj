@@ -111,13 +111,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="images\" />
-    <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
     <Folder Include="merges\ios\" />
@@ -138,7 +132,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="index.html" />
-    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\calcolatrice.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\platformOverrides.js" />

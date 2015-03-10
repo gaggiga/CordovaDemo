@@ -4,7 +4,7 @@
         this.valoreCorrente = 0;
         this.operazione = "";
         this.testo = "0";
-        this.listeners = {};
+        this.listeners = [];
     }
 
     Calcolatrice.prototype = {
@@ -42,7 +42,7 @@
         }
 
         this.valoreCorrente = parseFloat(this.testo);
-        this.fireTestoCambiato("testoCambiato");
+        this.fireTestoCambiato();
     }
 
     function azzera(testo) {
@@ -50,7 +50,7 @@
         this.operazione = "";
         this.valoreCorrente = 0;
         this.valorePrecedente = 0;
-        this.fireTestoCambiato("testoCambiato");
+        this.fireTestoCambiato();
     }
 
     function nuovaOperazione(operazione) {
@@ -82,45 +82,26 @@
 
         this.operazione = operazione;
         this.testo = this.valorePrecedente.toString();
-        this.fireTestoCambiato("testoCambiato");
+        this.fireTestoCambiato();
     }
 
-    function addListenerTestoCambiato(type, listener) {
-        if (typeof this.listeners[type] == "undefined") {
-            this.listeners[type] = [];
-        }
-
-        this.listeners[type].push(listener);
+    function addListenerTestoCambiato(listener) {
+        this.listeners.push(listener);
     }
 
-    function fireTestoCambiato(event) {
-        if (typeof event == "string") {
-            event = { type: event };
-        }
-        if (!event.target) {
-            event.target = this;
-        }
+    function fireTestoCambiato() {
+        var event = { type: 'testoCambiato', target: this };
 
-        if (!event.type) {  //falsy
-            throw new Error("Event object missing 'type' property.");
-        }
-
-        if (this.listeners[event.type] instanceof Array) {
-            var currentListeners = this.listeners[event.type];
-            for (var i = 0, len = currentListeners.length; i < len; i++) {
-                currentListeners[i].call(this, event);
-            }
+        for (var i = 0, len = this.listeners.length; i < len; i++) {
+            this.listeners[i].call(this, event);
         }
     }
 
-    function removeListenerTestoCambiato(type, listener) {
-        if (this.listeners[type] instanceof Array) {
-            var currentListeners = this.listeners[type];
-            for (var i = 0, len = currentListeners.length; i < len; i++) {
-                if (currentListeners[i] === listener) {
-                    currentListeners.splice(i, 1);
-                    break;
-                }
+    function removeListenerTestoCambiato(listener) {
+        for (var i = 0, len = this.listeners.length; i < len; i++) {
+            if (this.listeners[i] === listener) {
+                this.listeners.splice(i, 1);
+                break;
             }
         }
     }
