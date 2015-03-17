@@ -58,14 +58,14 @@
         this.valoreCorrente = 0;
 
         switch (this.operazione) {
-            case "/":
+            case "÷":
                 if (valore === 0) {
                     this.azzera("Non posso dividere per zero");
                 } else {
                     this.valorePrecedente = this.valorePrecedente / valore;
                 }
                 break;
-            case "*":
+            case "×":
                 this.valorePrecedente = this.valorePrecedente * valore;
                 break;
             case "+":
